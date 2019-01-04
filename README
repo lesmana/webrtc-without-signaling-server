@@ -1,0 +1,9 @@
+try to get webrtc peer to peer connection without server.
+
+still using turn or stun server.
+seems to be no way to avoid that on the internet.
+maybe possible to avoid on local network.
+
+inspired by https://github.com/xem/miniWebRTC
+
+which in turn was inspired by https://github.com/cjb/serverless-webrtc
