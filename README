@@ -1,6 +1,8 @@
-try to get webrtc peer to peer connection without server.
+webrtc peer to peer connection without signalling server.
 
-still using turn or stun server.
+signalling is done by copying offer and answer manually.
+
+still need turn (or stun) server if connecting over internet.
 seems to be no way to avoid that on the internet.
 maybe possible to avoid on local network.
 
