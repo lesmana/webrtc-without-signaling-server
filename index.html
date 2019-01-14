@@ -4,9 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>webrtc without server demo</title>
+    <title>webrtc without signalling server demo</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
 
@@ -19,51 +18,12 @@ a stun server is still required for connections over the internet.
 </p>
 
 <p>
-  <button id="initiatebutton" onclick="clickinitiate()">initiate</button>
-  <button id="respondbutton" onclick="clickrespond()">respond</button>
+<a href="initiating.html">initiate</a>
 </p>
 
-<span id="spaninitiate" class="invisible">
 <p>
-  initiating a connection
+<a href="responding.html">respond</a>
 </p>
-<p>
-please copy the text below and give it to the responding side.
-</p>
-<textarea id="textlocaloffer" readonly
-  placeholder="please wait a few seconds"></textarea>
-<span id="initiateerror"></span>
-<button id="localofferdonebutton" onclick="clicklocalofferdone()">done</button>
-</span>
-
-<span id="spanremoteanswer" class="invisible">
-<p>
-please wait for responding side to give text and paste it below
-</p>
-<textarea id="textremoteanswer"
-  placeholder="please paste text from responding side"></textarea>
-<button id="remotenaswerbutton" onclick="clickremoteanswer()">text pasted</button>
-</span>
-
-<span id="spanrespond" class="invisible">
-<p>
-  responding to a connection
-</p>
-<p>
-please wait for initiating side to give text and paste it below
-</p>
-<textarea id="textremoteoffer"
-  placeholder="please paste text from initiating side"></textarea>
-<button id="remoteofferbutton" onclick="clickremoteoffer()">text pasted</button>
-</span>
-
-<span id="spananswer" class="invisible">
-<p>
-please give following text to initiating side
-</p>
-<textarea id="textlocalanswer" readonly
-  placeholder="please wait a few seconds"></textarea>
-</span>
 
 </body>
 
