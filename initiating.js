@@ -3,14 +3,14 @@ function clickinitiate() {
   document.getElementById('initiatebutton').disabled = true;
   document.getElementById('spaninitiate').classList.toggle('invisible');
   peerConnection = createPeerConnection();
-  peerConnection.onicecandidate = handleicecandidate;
+  peerConnection.onicecandidate = initiatingicecandidate;
   dataChannel = peerConnection.createDataChannel('chat');
   offerPromise = peerConnection.createOffer();
   offerPromise.then(offerFulfilled, offerRejected);
 }
 
-function handleicecandidate(event) {
-  console.log('handleicecandidate');
+function initiatingicecandidate(event) {
+  console.log('initiatingicecandidate');
   if (event.candidate != null) {
     console.log('new candidate');
     console.log(event);
