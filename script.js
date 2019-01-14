@@ -7,7 +7,12 @@ function clickinitiate() {
   configuration = {
     iceServers: [{
       urls: "stun:stun.stunprotocol.org"}]};
-  peerConnection = new RTCPeerConnection(configuration);
+  try {
+    peerConnection = new RTCPeerConnection(configuration);
+  } catch(err) {
+    errorelement = document.getElementById('initiateerror');
+    errorelement.innerHTML = 'error: ' + err;
+  }
   peerConnection.onicecandidate = handleicecandidate;
   dataChannel = peerConnection.createDataChannel('chat');
   offerPromise = peerConnection.createOffer();
