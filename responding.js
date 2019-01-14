@@ -26,7 +26,8 @@ function remoteOfferRejected(reason) {
 function answerFulfilled(value) {
   console.log('answerFulFilled');
   console.log(value);
-  // TODO peerConnection.setLocalDescription(value);
+  localAnswerPromise = peerConnection.setLocalDescription(value);
+  localAnswerPromise.then(localAnswerFulfilled, localAnswerRejected);
   document.getElementById('spananswer').classList.toggle('invisible');
   textelement = document.getElementById('textlocalanswer');
   textelement.value = JSON.stringify(value);
@@ -34,6 +35,16 @@ function answerFulfilled(value) {
 
 function answerRejected(reason) {
   console.log('answerRejected');
+  console.log(reason);
+}
+
+function localAnswerFulfilled(value) {
+  console.log('localAnswerFulfilled');
+  console.log(value);
+}
+
+function localAnswerRejected(reason) {
+  console.log('localAnswerRejected');
   console.log(reason);
 }
 
