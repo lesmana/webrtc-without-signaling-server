@@ -42,7 +42,18 @@ please copy the text below and give it to the responding side.
 <p>
 please wait for initiating side to give text and paste it below
 </p>
-<textarea id="textremoteoffer"></textarea>
+<textarea id="textremoteoffer"
+  placeholder="please paste text from initiating side"></textarea>
+<button id="remoteofferbutton" onclick="clickremoteoffer()">text pasted</button>
+
+<span id="spananswer" class="invisible">
+<p>
+please give following text to initiating side
+</p>
+<textarea id="textlocalanswer" disabled
+  placeholder="please wait a few seconds"></textarea>
+</span>
+
 </span>
 
 </body>
