@@ -109,3 +109,22 @@ function clicklocalofferdone() {
   document.getElementById('localofferdonebutton').disabled = true;
 }
 
+function clickremoteanswer() {
+  console.log('clickremoteanswer');
+  textelement = document.getElementById('textremoteanswer');
+  textelement.disabled = true;
+  remoteAnswer = JSON.parse(textelement.value);
+  remoteAnswerPromise = peerConnection.setRemoteDescription(remoteAnswer);
+  remoteAnswerPromise.then(remoteAnswerFulfilled, remoteAnswerRejected);
+}
+
+function remoteAnswerFulfilled(value) {
+  console.log('remoteAnswerFulFilled');
+  console.log(value);
+}
+
+function remoteAnswerRejected(reason) {
+  console.log('remoteAnswerRejected');
+  console.log(reason);
+}
+
