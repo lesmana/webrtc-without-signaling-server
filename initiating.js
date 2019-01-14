@@ -3,9 +3,22 @@ function clickinitiate() {
   document.getElementById('initiatebutton').disabled = true;
   document.getElementById('spaninitiate').classList.toggle('invisible');
   peerConnection = createPeerConnection();
+  peerConnection.onicecandidate = handleicecandidate;
   dataChannel = peerConnection.createDataChannel('chat');
   offerPromise = peerConnection.createOffer();
   offerPromise.then(offerFulfilled, offerRejected);
+}
+
+function handleicecandidate(event) {
+  console.log('handleicecandidate');
+  if (event.candidate != null) {
+    console.log('new candidate');
+    console.log(event);
+  } else {
+    console.log('no new candidates');
+    textelement = document.getElementById('textlocaloffer');
+    textelement.value = JSON.stringify(peerConnection.localDescription);
+  }
 }
 
 function offerFulfilled(value) {

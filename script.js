@@ -9,19 +9,5 @@ function createPeerConnection() {
     errorelement = document.getElementById('initiateerror');
     errorelement.innerHTML = 'error: ' + err;
   }
-  peerConnection.onicecandidate = handleicecandidate;
   return peerConnection;
 }
-
-function handleicecandidate(event) {
-  console.log('handleicecandidate');
-  if (event.candidate != null) {
-    console.log('new candidate');
-    console.log(event);
-  } else {
-    console.log('no new candidates');
-    textelement = document.getElementById('textlocaloffer');
-    textelement.value = JSON.stringify(peerConnection.localDescription);
-  }
-}
-
