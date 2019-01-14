@@ -1,7 +1,8 @@
 
 function clickinitiate() {
   console.log('clickinitiate');
-  document.getElementById('spanbuttons').classList.toggle('invisible');
+  document.getElementById('initiatebutton').disabled = true;
+  document.getElementById('respondbutton').disabled = true;
   document.getElementById('spaninitiate').classList.toggle('invisible');
   configuration = {
     iceServers: [{
@@ -49,6 +50,7 @@ function localDescriptionRejected(reason) {
 
 function clickrespond() {
   console.log('clickrespond');
-  document.getElementById('spanbuttons').classList.toggle('invisible');
+  document.getElementById('initiatebutton').disabled = true;
+  document.getElementById('respondbutton').disabled = true;
   document.getElementById('spanrespond').classList.toggle('invisible');
 }
