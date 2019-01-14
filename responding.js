@@ -6,20 +6,20 @@ function clickremoteoffer() {
   textelement = document.getElementById('textremoteoffer');
   textelement.disabled = true;
   remoteOffer = JSON.parse(textelement.value);
-  remoteDescriptionPromise = peerConnection.setRemoteDescription(remoteOffer);
-  remoteDescriptionPromise.then(remoteDescriptionFulfilled, remoteDescriptionRejected);
+  remoteOfferPromise = peerConnection.setRemoteDescription(remoteOffer);
+  remoteOfferPromise.then(remoteOfferFulfilled, remoteOfferRejected);
 }
 
-function remoteDescriptionFulfilled(value) {
-  console.log('remoteDescriptionFulfilled');
+function remoteOfferFulfilled(value) {
+  console.log('remoteOfferFulfilled');
   console.log(value);
   dataChannel = peerConnection.createDataChannel('chat');
   answerPromise = peerConnection.createAnswer();
   answerPromise.then(answerFulfilled, answerRejected);
 }
 
-function remoteDescriptionRejected(reason) {
-  console.log('remoteDescriptionRejected');
+function remoteOfferRejected(reason) {
+  console.log('remoteOfferRejected');
   console.log(reason);
 }
 
