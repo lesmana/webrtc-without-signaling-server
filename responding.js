@@ -2,7 +2,6 @@ function clickremoteoffer() {
   console.log('clickremoteoffer');
   document.getElementById('remoteofferbutton').disabled = true;
   peerConnection = createPeerConnection();
-  dataChannel = peerConnection.createDataChannel('chat');
   textelement = document.getElementById('textremoteoffer');
   textelement.disabled = true;
   remoteOffer = JSON.parse(textelement.value);
@@ -13,7 +12,6 @@ function clickremoteoffer() {
 function remoteOfferFulfilled(value) {
   console.log('remoteOfferFulfilled');
   console.log(value);
-  dataChannel = peerConnection.createDataChannel('chat');
   answerPromise = peerConnection.createAnswer();
   answerPromise.then(answerFulfilled, answerRejected);
 }
