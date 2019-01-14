@@ -1,15 +1,8 @@
-function clickrespond() {
-  console.log('clickrespond');
-  document.getElementById('initiatebutton').disabled = true;
-  document.getElementById('respondbutton').disabled = true;
-  document.getElementById('spanrespond').classList.toggle('invisible');
-  peerConnection = createPeerConnection();
-  dataChannel = peerConnection.createDataChannel('chat');
-}
-
 function clickremoteoffer() {
   console.log('clickremoteoffer');
   document.getElementById('remoteofferbutton').disabled = true;
+  peerConnection = createPeerConnection();
+  dataChannel = peerConnection.createDataChannel('chat');
   textelement = document.getElementById('textremoteoffer');
   textelement.disabled = true;
   remoteOffer = JSON.parse(textelement.value);
