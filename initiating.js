@@ -11,8 +11,8 @@ function clickinitiate() {
 function offerFulfilled(value) {
   console.log('offerFulFilled');
   console.log(value);
-  localDescriptionPromise = peerConnection.setLocalDescription(value);
-  localDescriptionPromise.then(localDescriptionFulfilled, localDescriptionRejected);
+  localOfferPromise = peerConnection.setLocalDescription(value);
+  localOfferPromise.then(localOfferFulfilled, localOfferRejected);
 }
 
 function offerRejected(reason) {
@@ -20,13 +20,13 @@ function offerRejected(reason) {
   console.log(reason);
 }
 
-function localDescriptionFulfilled(value) {
-  console.log('localDescriptionFulfilled');
+function localOfferFulfilled(value) {
+  console.log('localOfferFulfilled');
   console.log(value);
 }
 
-function localDescriptionRejected(reason) {
-  console.log('localDescriptionRejected');
+function localOfferRejected(reason) {
+  console.log('localOfferRejected');
   console.log(reason);
 }
 
