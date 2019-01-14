@@ -102,3 +102,8 @@ function answerRejected(reason) {
   console.log(reason);
 }
 
+function clicklocalofferdone() {
+  console.log('clicklocalofferdone');
+  document.getElementById('spanremoteanswer').classList.toggle('invisible');
+}
+
