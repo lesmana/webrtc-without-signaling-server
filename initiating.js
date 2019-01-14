@@ -18,6 +18,7 @@ function handleicecandidate(event) {
     console.log('no new candidates');
     textelement = document.getElementById('textlocaloffer');
     textelement.value = JSON.stringify(peerConnection.localDescription);
+    document.getElementById('localofferdonebutton').disabled = false;
   }
 }
 
