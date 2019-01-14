@@ -93,6 +93,7 @@ function remoteDescriptionRejected(reason) {
 function answerFulfilled(value) {
   console.log('answerFulFilled');
   console.log(value);
+  // TODO peerConnection.setLocalDescription(value);
   document.getElementById('spananswer').classList.toggle('invisible');
   textelement = document.getElementById('textlocalanswer');
   textelement.value = JSON.stringify(value);
