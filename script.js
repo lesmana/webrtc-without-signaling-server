@@ -69,6 +69,7 @@ function clickrespond() {
 
 function clickremoteoffer() {
   console.log('clickremoteoffer');
+  document.getElementById('remoteofferbutton').disabled = true;
   textelement = document.getElementById('textremoteoffer');
   textelement.disabled = true;
   remoteOffer = JSON.parse(textelement.value);
@@ -105,5 +106,6 @@ function answerRejected(reason) {
 function clicklocalofferdone() {
   console.log('clicklocalofferdone');
   document.getElementById('spanremoteanswer').classList.toggle('invisible');
+  document.getElementById('localofferdonebutton').disabled = true;
 }
 
