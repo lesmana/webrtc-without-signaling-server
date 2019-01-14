@@ -2,11 +2,24 @@ function clickremoteoffer() {
   console.log('clickremoteoffer');
   document.getElementById('remoteofferbutton').disabled = true;
   peerConnection = createPeerConnection();
+  peerConnection.onicecandidate = respondingicecandidate;
   textelement = document.getElementById('textremoteoffer');
   textelement.disabled = true;
   remoteOffer = JSON.parse(textelement.value);
   remoteOfferPromise = peerConnection.setRemoteDescription(remoteOffer);
   remoteOfferPromise.then(remoteOfferFulfilled, remoteOfferRejected);
+}
+
+function respondingicecandidate(event) {
+  console.log('respondingicecandidate');
+  if (event.candidate != null) {
+    console.log('new candidate');
+    console.log(event);
+  } else {
+    console.log('no new candidates');
+    textelement = document.getElementById('textlocalanswer');
+    textelement.value = JSON.stringify(peerConnection.localDescription);
+  }
 }
 
 function remoteOfferFulfilled(value) {
@@ -27,8 +40,6 @@ function answerFulfilled(value) {
   localAnswerPromise = peerConnection.setLocalDescription(value);
   localAnswerPromise.then(localAnswerFulfilled, localAnswerRejected);
   document.getElementById('spananswer').classList.toggle('invisible');
-  textelement = document.getElementById('textlocalanswer');
-  textelement.value = JSON.stringify(value);
 }
 
 function answerRejected(reason) {
