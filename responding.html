@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>responding webrtc without signalling server demo</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js"></script>
     <script src="responding.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
@@ -24,6 +23,7 @@ please wait for initiating side to give text and paste it below
 <textarea id="textremoteoffer"
   placeholder="please paste text from initiating side"></textarea>
 <button id="remoteofferbutton" onclick="clickremoteoffer()">text pasted</button>
+<span id="responderror"></span>
 
 <span id="spananswer" class="invisible">
 <p>

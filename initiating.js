@@ -1,8 +1,21 @@
+function initiatingPeerConnection() {
+  configuration = {
+    iceServers: [{
+      urls: "stun:stun.stunprotocol.org"}]};
+  try {
+    peerConnection = new RTCPeerConnection(configuration);
+  } catch(err) {
+    errorelement = document.getElementById('initiateerror');
+    errorelement.innerHTML = 'error: ' + err;
+  }
+  return peerConnection;
+}
+
 function clickinitiate() {
   console.log('clickinitiate');
   document.getElementById('initiatebutton').disabled = true;
   document.getElementById('spaninitiate').classList.toggle('invisible');
-  peerConnection = createPeerConnection();
+  peerConnection = initiatingPeerConnection();
   peerConnection.onicecandidate = initiatingicecandidate;
   dataChannel = peerConnection.createDataChannel('chat');
   offerPromise = peerConnection.createOffer();

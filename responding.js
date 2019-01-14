@@ -1,7 +1,20 @@
+function respondingPeerConnection() {
+  configuration = {
+    iceServers: [{
+      urls: "stun:stun.stunprotocol.org"}]};
+  try {
+    peerConnection = new RTCPeerConnection(configuration);
+  } catch(err) {
+    errorelement = document.getElementById('responderror');
+    errorelement.innerHTML = 'error: ' + err;
+  }
+  return peerConnection;
+}
+
 function clickremoteoffer() {
   console.log('clickremoteoffer');
   document.getElementById('remoteofferbutton').disabled = true;
-  peerConnection = createPeerConnection();
+  peerConnection = respondingPeerConnection();
   peerConnection.onicecandidate = respondingicecandidate;
   textelement = document.getElementById('textremoteoffer');
   textelement.disabled = true;
