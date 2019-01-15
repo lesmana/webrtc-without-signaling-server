@@ -15,6 +15,8 @@ function createPeerConnection(lasticecandidate) {
     chatlog('error: ' + err);
   }
   peerConnection.onicecandidate = handleicecandidate(lasticecandidate);
+  peerConnection.onconnectionstatechange = handleconnectionstatechange;
+  peerConnection.oniceconnectionstatechange = handleiceconnectionstatechange;
   return peerConnection;
 }
 
@@ -28,4 +30,14 @@ function handleicecandidate(lasticecandidate) {
       lasticecandidate();
     }
   }
+}
+
+function handleconnectionstatechange(event) {
+  console.log('handleconnectionstatechange');
+  console.log(event);
+}
+
+function handleiceconnectionstatechange(event) {
+  console.log('handleiceconnectionstatechange');
+  console.log(event);
 }
