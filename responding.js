@@ -1,19 +1,7 @@
-function respondingPeerConnection() {
-  configuration = {
-    iceServers: [{
-      urls: "stun:stun.stunprotocol.org"}]};
-  try {
-    peerConnection = new RTCPeerConnection(configuration);
-  } catch(err) {
-    chatlog('error: ' + err);
-  }
-  return peerConnection;
-}
-
 function clickremoteoffer() {
   console.log('clickremoteoffer');
   document.getElementById('remoteofferbutton').disabled = true;
-  peerConnection = respondingPeerConnection();
+  peerConnection = createPeerConnection();
   peerConnection.onicecandidate = respondingicecandidate;
   textelement = document.getElementById('textremoteoffer');
   textelement.disabled = true;

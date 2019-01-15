@@ -1,20 +1,8 @@
-function initiatingPeerConnection() {
-  configuration = {
-    iceServers: [{
-      urls: "stun:stun.stunprotocol.org"}]};
-  try {
-    peerConnection = new RTCPeerConnection(configuration);
-  } catch(err) {
-    chatlog('error: ' + err);
-  }
-  return peerConnection;
-}
-
 function clickinitiate() {
   console.log('clickinitiate');
   document.getElementById('initiatebutton').disabled = true;
   document.getElementById('spaninitiate').classList.toggle('invisible');
-  peerConnection = initiatingPeerConnection();
+  peerConnection = createPeerConnection();
   peerConnection.onicecandidate = initiatingicecandidate;
   dataChannel = peerConnection.createDataChannel('chat');
   offerPromise = peerConnection.createOffer();
