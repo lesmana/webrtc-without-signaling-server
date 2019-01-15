@@ -5,7 +5,7 @@ function chatlog(msg) {
   chatelement.scrollTop = chatelement.scrollHeight
 }
 
-function createPeerConnection() {
+function createPeerConnection(lasticecandidate) {
   configuration = {
     iceServers: [{
       urls: "stun:stun.stunprotocol.org"}]};
@@ -14,6 +14,7 @@ function createPeerConnection() {
   } catch(err) {
     chatlog('error: ' + err);
   }
+  peerConnection.onicecandidate = handleicecandidate(lasticecandidate);
   return peerConnection;
 }
 

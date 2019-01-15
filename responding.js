@@ -1,8 +1,7 @@
 function clickremoteoffer() {
   console.log('clickremoteoffer');
   document.getElementById('remoteofferbutton').disabled = true;
-  peerConnection = createPeerConnection();
-  peerConnection.onicecandidate = handleicecandidate(lasticecandidate);
+  peerConnection = createPeerConnection(lasticecandidate);
   textelement = document.getElementById('textremoteoffer');
   textelement.disabled = true;
   remoteOffer = JSON.parse(textelement.value);

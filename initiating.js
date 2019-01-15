@@ -2,8 +2,7 @@ function clickinitiate() {
   console.log('clickinitiate');
   document.getElementById('initiatebutton').disabled = true;
   document.getElementById('spaninitiate').classList.toggle('invisible');
-  peerConnection = createPeerConnection();
-  peerConnection.onicecandidate = handleicecandidate(lasticecandidate);
+  peerConnection = createPeerConnection(lasticecandidate);
   dataChannel = peerConnection.createDataChannel('chat');
   offerPromise = peerConnection.createOffer();
   offerPromise.then(offerFulfilled, offerRejected);
