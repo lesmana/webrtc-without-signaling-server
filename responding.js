@@ -2,6 +2,7 @@ function clickremoteoffer() {
   console.log('clickremoteoffer');
   document.getElementById('remoteofferbutton').disabled = true;
   peerConnection = createPeerConnection(lasticecandidate);
+  peerConnection.ondatachannel = handledatachannel;
   textelement = document.getElementById('textremoteoffer');
   textelement.disabled = true;
   remoteOffer = JSON.parse(textelement.value);
@@ -13,6 +14,11 @@ function lasticecandidate() {
   console.log('lasticecandidate');
   textelement = document.getElementById('textlocalanswer');
   textelement.value = JSON.stringify(peerConnection.localDescription);
+}
+
+function handledatachannel(event) {
+  console.log('handledatachannel');
+  console.log(event);
 }
 
 function remoteOfferFulfilled(value) {
