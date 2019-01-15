@@ -19,6 +19,7 @@ function lasticecandidate() {
 function handledatachannel(event) {
   console.log('handledatachannel');
   console.log(event);
+  // TODO dataChannel = event.channel;
 }
 
 function remoteOfferFulfilled(value) {
