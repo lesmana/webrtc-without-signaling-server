@@ -10,18 +10,6 @@ function clickremoteoffer() {
   remoteOfferPromise.then(remoteOfferFulfilled, remoteOfferRejected);
 }
 
-function handleicecandidate(lasticecandidate) {
-  return function(event) {
-    if (event.candidate != null) {
-      console.log('new candidate');
-      console.log(event);
-    } else {
-      console.log('no new candidates');
-      lasticecandidate();
-    }
-  }
-}
-
 function lasticecandidate() {
   console.log('lasticecandidate');
   textelement = document.getElementById('textlocalanswer');

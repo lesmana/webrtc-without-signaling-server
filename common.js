@@ -16,3 +16,15 @@ function createPeerConnection() {
   }
   return peerConnection;
 }
+
+function handleicecandidate(lasticecandidate) {
+  return function(event) {
+    if (event.candidate != null) {
+      console.log('new candidate');
+      console.log(event);
+    } else {
+      console.log('no new candidates');
+      lasticecandidate();
+    }
+  }
+}
