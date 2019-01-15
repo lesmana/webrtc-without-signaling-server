@@ -5,8 +5,7 @@ function initiatingPeerConnection() {
   try {
     peerConnection = new RTCPeerConnection(configuration);
   } catch(err) {
-    errorelement = document.getElementById('initiateerror');
-    errorelement.innerHTML = 'error: ' + err;
+    chatlog('error: ' + err);
   }
   return peerConnection;
 }
