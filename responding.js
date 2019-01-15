@@ -2,7 +2,7 @@ function clickremoteoffer() {
   console.log('clickremoteoffer');
   document.getElementById('remoteofferbutton').disabled = true;
   peerConnection = createPeerConnection();
-  peerConnection.onicecandidate = respondingicecandidate;
+  peerConnection.onicecandidate = handleicecandidate(lasticecandidate);
   textelement = document.getElementById('textremoteoffer');
   textelement.disabled = true;
   remoteOffer = JSON.parse(textelement.value);
@@ -10,16 +10,22 @@ function clickremoteoffer() {
   remoteOfferPromise.then(remoteOfferFulfilled, remoteOfferRejected);
 }
 
-function respondingicecandidate(event) {
-  console.log('respondingicecandidate');
+function handleicecandidate(lasticecandidate) {
+  return function(event) {
   if (event.candidate != null) {
     console.log('new candidate');
     console.log(event);
   } else {
     console.log('no new candidates');
+    lasticecandidate();
+  }
+  }
+}
+
+function lasticecandidate() {
+  console.log('lasticecandidate');
     textelement = document.getElementById('textlocalanswer');
     textelement.value = JSON.stringify(peerConnection.localDescription);
-  }
 }
 
 function remoteOfferFulfilled(value) {
