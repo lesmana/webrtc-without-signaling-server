@@ -38,8 +38,9 @@ for example messaging services, emails, or pen and paper.
 a stun server is lightweight and typically free to use for anyone.
 one might think of a stun server like a dns server.
 
-since a turn server needs to passtrough all data it needs to be
-powerfull and is typically limited to paying customers.
+a turn server needs to passtrough all data from one end to the other.
+therefore it needs to be powerfull and is typically
+limited to paying customers.
 
 about this tech demo
 --------------------
