@@ -55,6 +55,20 @@ that means a so called "offer" has to be copied from the initiator to
 the responder. and the "answer" has to be copied from the responder to
 the initiator.
 
+why?
+----
+
+we want to create a multiplayer game playable without setting up a server.
+target devices are tablets and smartphones
+typically connected in a local network.
+target users are families.
+a typical situation would be a family in a living room,
+each with their own device, wanting to play a game together.
+
+with webrtc we hope to able to create a game which can be played
+multiplayer without setting up any server and even without requiring
+a constant internet connection.
+
 misc
 ----
 
