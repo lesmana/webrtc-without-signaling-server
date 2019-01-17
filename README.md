@@ -69,6 +69,18 @@ with webrtc we hope to able to create a game which can be played
 multiplayer without setting up any server and even without requiring
 a constant internet connection.
 
+goals
+-----
+
+have a html css javascript website which only needs to be downloaded once
+on each device and is then usable without constant internet connection.
+usable in this context means to maintain the peer to peer connection.
+
+have well written and commented source code so others can learn.
+
+ideally everything in one big html file.
+secondary: one big html file but still human readable.
+
 misc
 ----
 
