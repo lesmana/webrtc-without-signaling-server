@@ -1,11 +1,41 @@
 webrtc peer to peer chat without signaling server
 -------------------------------------------------
 
-a tech demo.
+this tech demo demonstrates a peer to peer webrtc connection
+without any signaling server.
+a free stun server is used if the connection goes over the internet.
+a turn server is never used.
 
-the signaling is done by copying offer and answer manually.
+since no signaling server is used the negotiation has to be done manually.
+that means a so called "offer" has to be copied from the initiator to
+the responder. and the "answer" has to be copied from the responder to
+the initiator.
 
-a stun server is still required if connecting over the internet.
+goals of this tech demo
+-----------------------
+
+have a html css javascript website which only needs to be downloaded once
+on each device and is then usable without constant internet connection.
+usable in this context means to maintain the peer to peer connection.
+
+have well written and commented source code so others can learn.
+
+ideally everything in one big html file.
+secondary: one big html file but still human readable.
+
+motivation
+----------
+
+we want to create a multiplayer game playable without setting up a server.
+target devices are tablets and smartphones
+typically connected in a local network.
+target users are families.
+a typical situation would be a family in a living room,
+each with their own device, wanting to play a game together.
+
+with webrtc we hope to able to create a game which can be played
+multiplayer without setting up any server and even without requiring
+a constant internet connection.
 
 about webrtc
 ------------
@@ -41,45 +71,6 @@ one might think of a stun server like a dns server.
 a turn server needs to passtrough all data from one end to the other.
 therefore it needs to be powerfull and is typically
 limited to paying customers.
-
-about this tech demo
---------------------
-
-this tech demo demonstrates a peer to peer webrtc connection
-without any signaling server.
-a free stun server is used if the connection goes over the internet.
-a turn server is never used.
-
-since no signaling server is used the negotiation has to be done manually.
-that means a so called "offer" has to be copied from the initiator to
-the responder. and the "answer" has to be copied from the responder to
-the initiator.
-
-why?
-----
-
-we want to create a multiplayer game playable without setting up a server.
-target devices are tablets and smartphones
-typically connected in a local network.
-target users are families.
-a typical situation would be a family in a living room,
-each with their own device, wanting to play a game together.
-
-with webrtc we hope to able to create a game which can be played
-multiplayer without setting up any server and even without requiring
-a constant internet connection.
-
-goals
------
-
-have a html css javascript website which only needs to be downloaded once
-on each device and is then usable without constant internet connection.
-usable in this context means to maintain the peer to peer connection.
-
-have well written and commented source code so others can learn.
-
-ideally everything in one big html file.
-secondary: one big html file but still human readable.
 
 misc
 ----
