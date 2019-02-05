@@ -5,9 +5,9 @@ function clickofferpasted() {
   peerConnection.ondatachannel = handledatachannel;
   textelement = document.getElementById('offertext');
   textelement.disabled = true;
-  remoteOffer = JSON.parse(textelement.value);
-  remoteOfferPromise = peerConnection.setRemoteDescription(remoteOffer);
-  remoteOfferPromise.then(remoteOfferFulfilled, remoteOfferRejected);
+  offer = JSON.parse(textelement.value);
+  setOfferPromise = peerConnection.setRemoteDescription(offer);
+  setOfferPromise.then(setOfferDone, setOfferFailed);
 }
 
 function lasticecandidate() {
@@ -22,38 +22,38 @@ function handledatachannel(event) {
   // TODO dataChannel = event.channel;
 }
 
-function remoteOfferFulfilled(value) {
-  console.log('remoteOfferFulfilled');
-  console.log(value);
-  answerPromise = peerConnection.createAnswer();
-  answerPromise.then(answerFulfilled, answerRejected);
+function setOfferDone(value) {
+  console.log('setOfferDone');
+  //console.log(value);
+  createAnswerPromise = peerConnection.createAnswer();
+  createAnswerPromise.then(createAnswerDone, createAnswerFailed);
 }
 
-function remoteOfferRejected(reason) {
-  console.log('remoteOfferRejected');
+function setOfferFailed(reason) {
+  console.log('setOfferFailed');
   console.log(reason);
 }
 
-function answerFulfilled(value) {
-  console.log('answerFulFilled');
-  console.log(value);
-  localAnswerPromise = peerConnection.setLocalDescription(value);
-  localAnswerPromise.then(localAnswerFulfilled, localAnswerRejected);
+function createAnswerDone(answer) {
+  console.log('createAnswerDone');
+  //console.log(answer);
+  setAnswerPromise = peerConnection.setLocalDescription(answer);
+  setAnswerPromise.then(setAnswerDone, setAnswerFailed);
   document.getElementById('spananswer').classList.toggle('invisible');
 }
 
-function answerRejected(reason) {
-  console.log('answerRejected');
+function createAnswerFailed(reason) {
+  console.log('createAnswerFailed');
   console.log(reason);
 }
 
-function localAnswerFulfilled(value) {
-  console.log('localAnswerFulfilled');
-  console.log(value);
+function setAnswerDone(value) {
+  console.log('setAnswerDone');
+  //console.log(value);
 }
 
-function localAnswerRejected(reason) {
-  console.log('localAnswerRejected');
+function setAnswerFailed(reason) {
+  console.log('setAnswerFailed');
   console.log(reason);
 }
 
