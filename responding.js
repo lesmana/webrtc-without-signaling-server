@@ -1,6 +1,6 @@
 function clickremoteoffer() {
   console.log('clickremoteoffer');
-  document.getElementById('remoteofferbutton').disabled = true;
+  document.getElementById('textpastedbutton').disabled = true;
   peerConnection = createPeerConnection(lasticecandidate);
   peerConnection.ondatachannel = handledatachannel;
   textelement = document.getElementById('textremoteoffer');
