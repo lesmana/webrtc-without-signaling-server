@@ -10,9 +10,9 @@ function clickinitiate() {
 
 function lasticecandidate() {
   console.log('lasticecandidate');
-  textelement = document.getElementById('textlocaloffer');
+  textelement = document.getElementById('offertext');
   textelement.value = JSON.stringify(peerConnection.localDescription);
-  document.getElementById('localofferdonebutton').disabled = false;
+  document.getElementById('offersentbutton').disabled = false;
 }
 
 function offerFulfilled(value) {
@@ -37,10 +37,10 @@ function localOfferRejected(reason) {
   console.log(reason);
 }
 
-function clicklocalofferdone() {
-  console.log('clicklocalofferdone');
+function clickoffersent() {
+  console.log('clickoffersent');
   document.getElementById('spanremoteanswer').classList.toggle('invisible');
-  document.getElementById('localofferdonebutton').disabled = true;
+  document.getElementById('offersentbutton').disabled = true;
 }
 
 function clickremoteanswer() {
