@@ -12,7 +12,7 @@ function clickofferpasted() {
 
 function lasticecandidate() {
   console.log('lasticecandidate');
-  textelement = document.getElementById('textlocalanswer');
+  textelement = document.getElementById('answertext');
   textelement.value = JSON.stringify(peerConnection.localDescription);
 }
 
