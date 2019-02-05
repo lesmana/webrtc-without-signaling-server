@@ -4,8 +4,8 @@ function clickinitiate() {
   document.getElementById('spanoffer').classList.toggle('invisible');
   peerConnection = createPeerConnection(lasticecandidate);
   dataChannel = peerConnection.createDataChannel('chat');
-  offerPromise = peerConnection.createOffer();
-  offerPromise.then(offerFulfilled, offerRejected);
+  createOfferPromise = peerConnection.createOffer();
+  createOfferPromise.then(createOfferDone, createOfferFailed);
 }
 
 function lasticecandidate() {
@@ -15,25 +15,25 @@ function lasticecandidate() {
   document.getElementById('offersentbutton').disabled = false;
 }
 
-function offerFulfilled(value) {
-  console.log('offerFulFilled');
-  console.log(value);
-  localOfferPromise = peerConnection.setLocalDescription(value);
-  localOfferPromise.then(localOfferFulfilled, localOfferRejected);
+function createOfferDone(offer) {
+  console.log('createOfferDone');
+  console.log(offer);
+  setOfferPromise = peerConnection.setLocalDescription(offer);
+  setOfferPromise.then(setOfferDone, setOfferFailed);
 }
 
-function offerRejected(reason) {
-  console.log('offerRejected');
+function createOfferFailed(reason) {
+  console.log('createOfferFailed');
   console.log(reason);
 }
 
-function localOfferFulfilled(value) {
-  console.log('localOfferFulfilled');
+function setOfferDone(value) {
+  console.log('setOfferDone');
   console.log(value);
 }
 
-function localOfferRejected(reason) {
-  console.log('localOfferRejected');
+function setOfferFailed(reason) {
+  console.log('setOfferFailed');
   console.log(reason);
 }
 
