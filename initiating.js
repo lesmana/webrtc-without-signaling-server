@@ -39,13 +39,13 @@ function localOfferRejected(reason) {
 
 function clickoffersent() {
   console.log('clickoffersent');
-  document.getElementById('spanremoteanswer').classList.toggle('invisible');
+  document.getElementById('spananswer').classList.toggle('invisible');
   document.getElementById('offersentbutton').disabled = true;
 }
 
-function clickremoteanswer() {
-  console.log('clickremoteanswer');
-  textelement = document.getElementById('textremoteanswer');
+function clickanswerpasted() {
+  console.log('clickanswerpasted');
+  textelement = document.getElementById('answertext');
   textelement.disabled = true;
   remoteAnswer = JSON.parse(textelement.value);
   remoteAnswerPromise = peerConnection.setRemoteDescription(remoteAnswer);
