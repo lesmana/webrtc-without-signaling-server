@@ -39,5 +39,5 @@ function handleconnectionstatechange(event) {
 
 function handleiceconnectionstatechange(event) {
   console.log('handleiceconnectionstatechange');
-  console.log(event);
+  console.log('current state: ' + event.target.iceConnectionState);
 }
