@@ -1,7 +1,7 @@
 function clickinitiate() {
   console.log('clickinitiate');
   document.getElementById('initiatebutton').disabled = true;
-  document.getElementById('spaninitiate').classList.toggle('invisible');
+  document.getElementById('spanoffer').classList.toggle('invisible');
   peerConnection = createPeerConnection(lasticecandidate);
   dataChannel = peerConnection.createDataChannel('chat');
   offerPromise = peerConnection.createOffer();
