@@ -8,14 +8,6 @@ function clickcreateoffer() {
   createOfferPromise.then(createOfferDone, createOfferFailed);
 }
 
-function lasticecandidate() {
-  console.log('lasticecandidate');
-  textelement = document.getElementById('textoffer');
-  offer = peerConnection.localDescription;
-  textelement.value = JSON.stringify(offer);
-  document.getElementById('buttonoffersent').disabled = false;
-}
-
 function createOfferDone(offer) {
   console.log('createOfferDone');
   //console.log(offer);
@@ -36,6 +28,14 @@ function setLocalDone(value) {
 function setLocalFailed(reason) {
   console.log('setLocalFailed');
   console.log(reason);
+}
+
+function lasticecandidate() {
+  console.log('lasticecandidate');
+  textelement = document.getElementById('textoffer');
+  offer = peerConnection.localDescription;
+  textelement.value = JSON.stringify(offer);
+  document.getElementById('buttonoffersent').disabled = false;
 }
 
 function clickoffersent() {

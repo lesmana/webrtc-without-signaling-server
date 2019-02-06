@@ -10,19 +10,6 @@ function clickofferpasted() {
   setRemotePromise.then(setRemoteDone, setRemoteFailed);
 }
 
-function lasticecandidate() {
-  console.log('lasticecandidate');
-  textelement = document.getElementById('textanswer');
-  answer = peerConnection.localDescription
-  textelement.value = JSON.stringify(answer);
-}
-
-function handledatachannel(event) {
-  console.log('handledatachannel');
-  console.log(event);
-  // TODO dataChannel = event.channel;
-}
-
 function setRemoteDone(value) {
   console.log('setRemoteDone');
   //console.log(value);
@@ -56,5 +43,18 @@ function setLocalDone(value) {
 function setLocalFailed(reason) {
   console.log('setLocalFailed');
   console.log(reason);
+}
+
+function lasticecandidate() {
+  console.log('lasticecandidate');
+  textelement = document.getElementById('textanswer');
+  answer = peerConnection.localDescription
+  textelement.value = JSON.stringify(answer);
+}
+
+function handledatachannel(event) {
+  console.log('handledatachannel');
+  console.log(event);
+  // TODO dataChannel = event.channel;
 }
 
