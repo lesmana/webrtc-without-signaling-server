@@ -22,9 +22,8 @@ function createOfferFailed(reason) {
   console.log(reason);
 }
 
-function setLocalDone(value) {
+function setLocalDone() {
   console.log('setLocalDone');
-  //console.log(value);
 }
 
 function setLocalFailed(reason) {
@@ -56,9 +55,8 @@ function clickanswerpasted() {
   setRemotePromise.then(setRemoteDone, setRemoteFailed);
 }
 
-function setRemoteDone(value) {
+function setRemoteDone() {
   console.log('setRemoteDone');
-  //console.log(value);
 }
 
 function setRemoteFailed(reason) {

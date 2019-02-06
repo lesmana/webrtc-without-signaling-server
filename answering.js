@@ -10,9 +10,8 @@ function clickofferpasted() {
   setRemotePromise.then(setRemoteDone, setRemoteFailed);
 }
 
-function setRemoteDone(value) {
+function setRemoteDone() {
   console.log('setRemoteDone');
-  //console.log(value);
   createAnswerPromise = peerConnection.createAnswer();
   createAnswerPromise.then(createAnswerDone, createAnswerFailed);
 }
@@ -35,9 +34,8 @@ function createAnswerFailed(reason) {
   console.log(reason);
 }
 
-function setLocalDone(value) {
+function setLocalDone() {
   console.log('setLocalDone');
-  //console.log(value);
 }
 
 function setLocalFailed(reason) {
