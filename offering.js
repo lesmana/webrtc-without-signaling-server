@@ -55,7 +55,7 @@ function clickanswerpasted() {
 
 function setRemoteDone(value) {
   console.log('setRemoteDone');
-  console.log(value);
+  //console.log(value);
 }
 
 function setRemoteFailed(reason) {
