@@ -47,8 +47,8 @@ function clickanswerpasted() {
   console.log('clickanswerpasted');
   textelement = document.getElementById('answertext');
   textelement.disabled = true;
-  remoteAnswer = JSON.parse(textelement.value);
-  setRemotePromise = peerConnection.setRemoteDescription(remoteAnswer);
+  answer = JSON.parse(textelement.value);
+  setRemotePromise = peerConnection.setRemoteDescription(answer);
   setRemotePromise.then(setRemoteDone, setRemoteFailed);
 }
 
