@@ -23,10 +23,10 @@ function createPeerConnection(lasticecandidate) {
 function handleicecandidate(lasticecandidate) {
   return function(event) {
     if (event.candidate != null) {
-      console.log('new candidate');
+      console.log('new ice candidate');
       //console.log(event);
     } else {
-      console.log('no new candidates');
+      console.log('all ice candidates');
       lasticecandidate();
     }
   }
@@ -38,6 +38,5 @@ function handleconnectionstatechange(event) {
 }
 
 function handleiceconnectionstatechange(event) {
-  console.log('handleiceconnectionstatechange');
-  console.log('current state: ' + event.target.iceConnectionState);
+  console.log('ice connection state: ' + event.target.iceConnectionState);
 }
