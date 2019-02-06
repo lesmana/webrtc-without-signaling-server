@@ -4,10 +4,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>initiating webrtc without signaling server demo</title>
+<title>offering webrtc without signaling server demo</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="common.js"></script>
-<script src="initiating.js"></script>
+<script src="offering.js"></script>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
 
@@ -20,7 +20,7 @@
 <button id="chatbutton" onclick="chatbuttonclick()" disabled>send</button>
 
 <p>
-initiating a connection
+offering a connection to a peer
 </p>
 
 <p>
@@ -29,7 +29,7 @@ initiating a connection
 
 <span id="spanoffer" class="invisible">
 <p>
-please copy the offer below and send it to the responding side.
+please copy the offer below and send it to the a peer.
 </p>
 <textarea id="offertext" readonly
   placeholder="please wait a few seconds"></textarea>
@@ -38,7 +38,7 @@ please copy the offer below and send it to the responding side.
 
 <span id="spananswer" class="invisible">
 <p>
-please wait for responding side to give answer and paste it below
+please wait for peer to give answer and paste it below
 </p>
 <textarea id="answertext"
   placeholder="please paste answer from responding side"></textarea>

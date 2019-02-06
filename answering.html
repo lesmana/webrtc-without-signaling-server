@@ -4,10 +4,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>responding webrtc without signaling server demo</title>
+<title>answering webrtc without signaling server demo</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="common.js"></script>
-<script src="responding.js"></script>
+<script src="answering.js"></script>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
 
@@ -20,10 +20,10 @@
 <button id="chatbutton" onclick="chatbuttonclick()" disabled>send</button>
 
 <p>
-responding to a connection
+answering to a connection offer from a peer
 </p>
 <p>
-please wait for initiating side to give offer and paste it below
+please wait for peer to give offer and paste it below
 </p>
 <textarea id="offertext"
   placeholder="please paste offer from initiating side"></textarea>
@@ -31,7 +31,7 @@ please wait for initiating side to give offer and paste it below
 
 <span id="spananswer" class="invisible">
 <p>
-please send following answer to initiating side
+please send following answer to peer
 </p>
 <textarea id="answertext" readonly
   placeholder="please wait a few seconds"></textarea>
