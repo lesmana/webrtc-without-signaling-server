@@ -18,8 +18,8 @@ function lasticecandidate() {
 function createOfferDone(offer) {
   console.log('createOfferDone');
   //console.log(offer);
-  setOfferPromise = peerConnection.setLocalDescription(offer);
-  setOfferPromise.then(setOfferDone, setOfferFailed);
+  setLocalPromise = peerConnection.setLocalDescription(offer);
+  setLocalPromise.then(setLocalDone, setLocalFailed);
 }
 
 function createOfferFailed(reason) {
@@ -27,13 +27,13 @@ function createOfferFailed(reason) {
   console.log(reason);
 }
 
-function setOfferDone(value) {
-  console.log('setOfferDone');
+function setLocalDone(value) {
+  console.log('setLocalDone');
   //console.log(value);
 }
 
-function setOfferFailed(reason) {
-  console.log('setOfferFailed');
+function setLocalFailed(reason) {
+  console.log('setLocalFailed');
   console.log(reason);
 }
 
