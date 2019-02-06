@@ -48,17 +48,17 @@ function clickanswerpasted() {
   textelement = document.getElementById('answertext');
   textelement.disabled = true;
   remoteAnswer = JSON.parse(textelement.value);
-  remoteAnswerPromise = peerConnection.setRemoteDescription(remoteAnswer);
-  remoteAnswerPromise.then(remoteAnswerFulfilled, remoteAnswerRejected);
+  setRemotePromise = peerConnection.setRemoteDescription(remoteAnswer);
+  setRemotePromise.then(setRemoteDone, setRemoteFailed);
 }
 
-function remoteAnswerFulfilled(value) {
-  console.log('remoteAnswerFulFilled');
+function setRemoteDone(value) {
+  console.log('setRemoteDone');
   console.log(value);
 }
 
-function remoteAnswerRejected(reason) {
-  console.log('remoteAnswerRejected');
+function setRemoteFailed(reason) {
+  console.log('setRemoteFailed');
   console.log(reason);
 }
 
