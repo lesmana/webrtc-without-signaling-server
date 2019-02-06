@@ -11,7 +11,8 @@ function clickinitiate() {
 function lasticecandidate() {
   console.log('lasticecandidate');
   textelement = document.getElementById('offertext');
-  textelement.value = JSON.stringify(peerConnection.localDescription);
+  offer = peerConnection.localDescription;
+  textelement.value = JSON.stringify(offer);
   document.getElementById('offersentbutton').disabled = false;
 }
 
