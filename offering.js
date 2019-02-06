@@ -46,6 +46,7 @@ function clickoffersent() {
 
 function clickanswerpasted() {
   console.log('clickanswerpasted');
+  document.getElementById('answerpastedbutton').disabled = true;
   textelement = document.getElementById('answertext');
   textelement.readOnly = true;
   answer = JSON.parse(textelement.value);
