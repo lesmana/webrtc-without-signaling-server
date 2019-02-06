@@ -1,6 +1,6 @@
 function clickinitiate() {
   console.log('clickinitiate');
-  document.getElementById('initiatebutton').disabled = true;
+  document.getElementById('buttoninitiate').disabled = true;
   document.getElementById('spanoffer').classList.toggle('invisible');
   peerConnection = createPeerConnection(lasticecandidate);
   dataChannel = peerConnection.createDataChannel('chat');
@@ -10,10 +10,10 @@ function clickinitiate() {
 
 function lasticecandidate() {
   console.log('lasticecandidate');
-  textelement = document.getElementById('offertext');
+  textelement = document.getElementById('textoffer');
   offer = peerConnection.localDescription;
   textelement.value = JSON.stringify(offer);
-  document.getElementById('offersentbutton').disabled = false;
+  document.getElementById('buttonoffersent').disabled = false;
 }
 
 function createOfferDone(offer) {
@@ -41,13 +41,13 @@ function setLocalFailed(reason) {
 function clickoffersent() {
   console.log('clickoffersent');
   document.getElementById('spananswer').classList.toggle('invisible');
-  document.getElementById('offersentbutton').disabled = true;
+  document.getElementById('buttonoffersent').disabled = true;
 }
 
 function clickanswerpasted() {
   console.log('clickanswerpasted');
-  document.getElementById('answerpastedbutton').disabled = true;
-  textelement = document.getElementById('answertext');
+  document.getElementById('buttonanswerpasted').disabled = true;
+  textelement = document.getElementById('textanswer');
   textelement.readOnly = true;
   answer = JSON.parse(textelement.value);
   setRemotePromise = peerConnection.setRemoteDescription(answer);

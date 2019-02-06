@@ -1,9 +1,9 @@
 function clickofferpasted() {
   console.log('clickremoteoffer');
-  document.getElementById('offerpastedbutton').disabled = true;
+  document.getElementById('buttonofferpasted').disabled = true;
   peerConnection = createPeerConnection(lasticecandidate);
   peerConnection.ondatachannel = handledatachannel;
-  textelement = document.getElementById('offertext');
+  textelement = document.getElementById('textoffer');
   textelement.readOnly = true;
   offer = JSON.parse(textelement.value);
   setRemotePromise = peerConnection.setRemoteDescription(offer);
@@ -12,7 +12,7 @@ function clickofferpasted() {
 
 function lasticecandidate() {
   console.log('lasticecandidate');
-  textelement = document.getElementById('answertext');
+  textelement = document.getElementById('textanswer');
   answer = peerConnection.localDescription
   textelement.value = JSON.stringify(answer);
 }
