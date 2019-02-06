@@ -23,7 +23,6 @@ function setRemoteFailed(reason) {
 
 function createAnswerDone(answer) {
   console.log('createAnswerDone');
-  //console.log(answer);
   setLocalPromise = peerConnection.setLocalDescription(answer);
   setLocalPromise.then(setLocalDone, setLocalFailed);
   document.getElementById('spananswer').classList.toggle('invisible');

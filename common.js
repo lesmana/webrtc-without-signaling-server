@@ -24,7 +24,6 @@ function handleicecandidate(lasticecandidate) {
   return function(event) {
     if (event.candidate != null) {
       console.log('new ice candidate');
-      //console.log(event);
     } else {
       console.log('all ice candidates');
       lasticecandidate();

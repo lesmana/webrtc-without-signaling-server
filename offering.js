@@ -12,7 +12,6 @@ function clickcreateoffer() {
 
 function createOfferDone(offer) {
   console.log('createOfferDone');
-  //console.log(offer);
   setLocalPromise = peerConnection.setLocalDescription(offer);
   setLocalPromise.then(setLocalDone, setLocalFailed);
 }
