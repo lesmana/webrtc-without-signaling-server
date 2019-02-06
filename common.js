@@ -40,3 +40,26 @@ function handleconnectionstatechange(event) {
 function handleiceconnectionstatechange(event) {
   console.log('ice connection state: ' + event.target.iceConnectionState);
 }
+
+function datachannelopen() {
+  console.log('datachannelopen');
+  chatlog('connected');
+  document.getElementById('chatinput').disabled = false;
+  document.getElementById('chatbutton').disabled = false;
+}
+
+function datachannelmessage(message) {
+  console.log('datachannelmessage');
+  console.log(message);
+  text = message.data;
+  chatlog(text);
+}
+
+function chatbuttonclick() {
+  console.log('chatbuttonclick');
+  textelement = document.getElementById('chatinput');
+  text = textelement.value
+  dataChannel.send(text);
+  chatlog(text);
+  textelement.value = '';
+}

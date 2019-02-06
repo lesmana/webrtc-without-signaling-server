@@ -4,6 +4,8 @@ function clickcreateoffer() {
   document.getElementById('spanoffer').classList.toggle('invisible');
   peerConnection = createPeerConnection(lasticecandidate);
   dataChannel = peerConnection.createDataChannel('chat');
+  dataChannel.onopen = datachannelopen;
+  dataChannel.onmessage = datachannelmessage;
   createOfferPromise = peerConnection.createOffer();
   createOfferPromise.then(createOfferDone, createOfferFailed);
 }

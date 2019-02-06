@@ -54,7 +54,7 @@ function lasticecandidate() {
 
 function handledatachannel(event) {
   console.log('handledatachannel');
-  console.log(event);
-  // TODO dataChannel = event.channel;
+  dataChannel = event.channel;
+  dataChannel.onopen = datachannelopen;
+  dataChannel.onmessage = datachannelmessage;
 }
-
