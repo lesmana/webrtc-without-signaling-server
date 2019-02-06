@@ -6,8 +6,8 @@ function clickofferpasted() {
   textelement = document.getElementById('offertext');
   textelement.readOnly = true;
   offer = JSON.parse(textelement.value);
-  setOfferPromise = peerConnection.setRemoteDescription(offer);
-  setOfferPromise.then(setOfferDone, setOfferFailed);
+  setRemotePromise = peerConnection.setRemoteDescription(offer);
+  setRemotePromise.then(setRemoteDone, setRemoteFailed);
 }
 
 function lasticecandidate() {
@@ -22,15 +22,15 @@ function handledatachannel(event) {
   // TODO dataChannel = event.channel;
 }
 
-function setOfferDone(value) {
-  console.log('setOfferDone');
+function setRemoteDone(value) {
+  console.log('setRemoteDone');
   //console.log(value);
   createAnswerPromise = peerConnection.createAnswer();
   createAnswerPromise.then(createAnswerDone, createAnswerFailed);
 }
 
-function setOfferFailed(reason) {
-  console.log('setOfferFailed');
+function setRemoteFailed(reason) {
+  console.log('setRemoteFailed');
   console.log(reason);
 }
 
