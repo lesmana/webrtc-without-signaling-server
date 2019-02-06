@@ -4,7 +4,7 @@ function clickofferpasted() {
   peerConnection = createPeerConnection(lasticecandidate);
   peerConnection.ondatachannel = handledatachannel;
   textelement = document.getElementById('offertext');
-  textelement.disabled = true;
+  textelement.readOnly = true;
   offer = JSON.parse(textelement.value);
   setOfferPromise = peerConnection.setRemoteDescription(offer);
   setOfferPromise.then(setOfferDone, setOfferFailed);
