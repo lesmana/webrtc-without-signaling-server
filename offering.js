@@ -47,7 +47,7 @@ function clickoffersent() {
 function clickanswerpasted() {
   console.log('clickanswerpasted');
   textelement = document.getElementById('answertext');
-  textelement.disabled = true;
+  textelement.readOnly = true;
   answer = JSON.parse(textelement.value);
   setRemotePromise = peerConnection.setRemoteDescription(answer);
   setRemotePromise.then(setRemoteDone, setRemoteFailed);
