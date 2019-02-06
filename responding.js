@@ -37,8 +37,8 @@ function setOfferFailed(reason) {
 function createAnswerDone(answer) {
   console.log('createAnswerDone');
   //console.log(answer);
-  setAnswerPromise = peerConnection.setLocalDescription(answer);
-  setAnswerPromise.then(setAnswerDone, setAnswerFailed);
+  setLocalPromise = peerConnection.setLocalDescription(answer);
+  setLocalPromise.then(setLocalDone, setLocalFailed);
   document.getElementById('spananswer').classList.toggle('invisible');
 }
 
@@ -47,13 +47,13 @@ function createAnswerFailed(reason) {
   console.log(reason);
 }
 
-function setAnswerDone(value) {
-  console.log('setAnswerDone');
+function setLocalDone(value) {
+  console.log('setLocalDone');
   //console.log(value);
 }
 
-function setAnswerFailed(reason) {
-  console.log('setAnswerFailed');
+function setLocalFailed(reason) {
+  console.log('setLocalFailed');
   console.log(reason);
 }
 
