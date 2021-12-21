@@ -78,3 +78,18 @@ misc
 inspired by https://github.com/xem/miniWebRTC
 
 which in turn was inspired by https://github.com/cjb/serverless-webrtc
+
+license
+-------
+
+Copyright Lesmana Zimmer lesmana@gmx.de
+
+This program is free software.
+It is licensed under the GNU AGPL version 3 or later.
+That means, in short, you are free use this program for any purpose;
+free to study and modify this program to suit your needs;
+and free to share this program (in original or modified form) with anyone.
+If you share this program you must do so under the same license.
+That means you have to provide the source code and grant the same freedoms.
+If you use this program as a web service the same rules apply as if sharing.
+For details see https://www.gnu.org/licenses/agpl-3.0.html
