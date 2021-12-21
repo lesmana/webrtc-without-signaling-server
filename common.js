@@ -1,7 +1,9 @@
 
 function chatlog(msg) {
   chatelement = document.getElementById('chatlog');
-  chatelement.innerHTML += '<p>[' + new Date() + '] ' + msg + '</p>';
+  newchatentry = document.createElement("p");
+  newchatentry.textContent = '[' + new Date() + '] ' + msg;
+  chatelement.appendChild(newchatentry);  
   chatelement.scrollTop = chatelement.scrollHeight
 }
 
