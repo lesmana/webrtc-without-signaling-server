@@ -1,0 +1,13 @@
+name:  Deploy Staging
+
+on:
+  push:
+    branches: [ staging ]
+
+jobs:
+        
+  deploy-staging:
+    name: Deploy to staging
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Deploy to staging using ${{ secrets.mysecret-stag }}
